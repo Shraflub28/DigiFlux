@@ -888,58 +888,196 @@ button.cta-button {
     }
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness Fixes */
 @media (max-width: 768px) {
+    /* Fix for overall container padding */
+    .container {
+        padding: 0 1.5rem;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Fix hero section for mobile */
     .hero-content h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
     }
-
-    .form-grid {
-        grid-template-columns: 1fr;
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
-
-    .hero-cta {
-        flex-direction: column;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
+    
     .animated-stats {
         flex-direction: column;
         gap: 1.5rem;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 2rem;
     }
     
-    .client-logos {
-        gap: 1rem;
-    }
-    
-    .client-logos img {
-        height: 30px;
-        width: 30px;
-    }
-
-    .section-header h2 {
+    .stat-number {
         font-size: 2.5rem;
     }
-
-    #services {
-        padding: 6rem 0 8rem;
+    
+    /* Fix service cards padding and spacing */
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem 0;
+        gap: 2rem !important;
     }
-
+    
     .service-card {
-        padding: 2rem;
-        min-height: auto;
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .service-card .card-content {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    /* Fix approach steps */
+    .approach-steps {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .step {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+    }
+    
+    /* Fix benefits grid */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0;
+    }
+    
+    .benefit {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+    }
+    
+    /* Fix team section */
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .team-member {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* Fix values section */
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .value-card {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* Fix contact form */
+    .contact-form {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* Fix footer */
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footer-branding {
+        margin-bottom: 2.5rem;
+    }
+    
+    .footer-logo {
+        font-size: 2.5rem;
+    }
+    
+    .social-links {
+        margin-bottom: 2rem;
+    }
+    
+    /* Fix vertical spacing */
+    section {
+        padding: 4rem 0 !important;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Small mobile fixes */
+@media (max-width: 480px) {
+    /* Further reduce font sizes */
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    /* Adjust padding */
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Fix card margins */
+    .service-card,
+    .step,
+    .benefit,
+    .team-member,
+    .value-card {
+        max-width: 100%;
+    }
+    
+    /* Center text in cards */
+    .service-card ul {
+        text-align: center;
     }
     
     .service-card ul li {
-        font-size: 0.9rem;
+        justify-content: center;
     }
     
-    .service-icon {
-        width: 60px;
-        height: 60px;
+    /* Improve footer spacing */
+    .footer-3d {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    /* Fix navigation */
+    nav {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
     }
 }
 
@@ -1709,4 +1847,85 @@ section, .service-card, .benefit, .step {
 .social-icon.float-3d:hover i {
     transform: rotateY(360deg);
     transition: transform 0.7s ease-in-out;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(10, 5, 31, 0.95) 0%, rgba(42, 19, 86, 0.95) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.mobile-nav.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 1.5rem 0;
+}
+
+.mobile-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-family: var(--font-display);
+}
+
+.mobile-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-nav-toggle {
+        display: block;
+    }
+    
+    /* ... existing mobile styles ... */
 } 

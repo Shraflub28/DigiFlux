@@ -603,4 +603,93 @@ window.onload = function() {
         card.style.visibility = 'visible';
         card.style.transform = 'translateY(0)';
     });
-}; 
+};
+
+// Mobile Navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileNavClose = document.querySelector('.mobile-nav-close');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav ul li a');
+    
+    // Open mobile navigation
+    if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+    }
+    
+    // Close mobile navigation
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    }
+    
+    // Close mobile navigation when clicking on a link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    });
+});
+
+// Animated stats counter
+document.addEventListener('DOMContentLoaded', function() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        let count = 0;
+        
+        const updateCount = () => {
+            const increment = target / 50; // Adjust speed of count
+            
+            if (count < target) {
+                count += increment;
+                stat.textContent = Math.ceil(count);
+                setTimeout(updateCount, 30);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        
+        // Start counter when element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(stat);
+    });
+});
+
+// Smooth scroll for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop;
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}); 
