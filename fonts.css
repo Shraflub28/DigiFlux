@@ -1,79 +1,113 @@
-/* Apple Fonts */
+/* Import Google Fonts as alternatives */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 
-/* SF Pro Display - Apple's main display font */
+/* SF Pro Display - replaced with Inter */
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff2') format('woff2');
+    font-style: normal;
     font-weight: 400;
-    font-style: normal;
+    src: local('Inter'), url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff2') format('woff2');
+    font-style: normal;
     font-weight: 500;
-    font-style: normal;
+    src: local('Inter Medium'), url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff2') format('woff2');
+    font-style: normal;
     font-weight: 600;
-    font-style: normal;
+    src: local('Inter SemiBold'), url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2') format('woff2');
+    font-style: normal;
     font-weight: 700;
-    font-style: normal;
+    src: local('Inter Bold'), url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-display: swap;
 }
 
-/* SF Pro Text - Apple's main text font */
+/* SF Pro Text - replaced with Inter */
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscotext-regular-webfont.woff2') format('woff2');
+    font-style: normal;
     font-weight: 400;
-    font-style: normal;
+    src: local('Inter'), url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscotext-medium-webfont.woff2') format('woff2');
-    font-weight: 500;
     font-style: normal;
+    font-weight: 500;
+    src: local('Inter Medium'), url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-display: swap;
 }
 
-/* SF Mono - Apple's monospace font */
+@font-face {
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Inter SemiBold'), url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* SF Mono - replaced with Roboto Mono */
 @font-face {
     font-family: 'SF Mono';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sfmono-regular-webfont.woff2') format('woff2');
-    font-weight: 400;
     font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Mono'), url('https://fonts.gstatic.com/s/robotomono/v22/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_ROW4.woff2') format('woff2');
+    font-display: swap;
 }
 
-/* New York - Apple's serif font */
+@font-face {
+    font-family: 'SF Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Mono Medium'), url('https://fonts.gstatic.com/s/robotomono/v22/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_ROW4.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* New York - replaced with Playfair Display */
 @font-face {
     font-family: 'New York';
-    src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/newyork/NewYorkMedium-Regular.woff2') format('woff2');
-    font-weight: 500;
     font-style: normal;
+    font-weight: 400;
+    src: local('Playfair Display'), url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qC0s.woff') format('woff');
+    font-display: swap;
 }
 
-/* Since direct loading of Apple fonts might have limitations, 
-   we provide system font fallbacks that closely approximate Apple fonts */
+@font-face {
+    font-family: 'New York';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Playfair Display Medium'), url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qC0s.woff') format('woff');
+    font-display: swap;
+}
+
+/* CSS class helpers */
 .sf-pro-display {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .sf-pro-text {
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'SF Pro Text', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .sf-mono {
-    font-family: 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-family: 'SF Mono', 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 .new-york {
-    font-family: 'New York', Georgia, 'Times New Roman', Times, serif;
+    font-family: 'New York', 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
 } 
